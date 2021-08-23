@@ -1,0 +1,505 @@
+/* ------------
+全体のスタイル
+------------ */
+/* 10px = 1rem */
+html {
+    font-size: 62.5%;
+}
+
+/* * ---------------- */ 
+/* headerのスタイル */
+/* ---------------- */
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    background-color: skyblue;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 30px;  
+}
+
+.header-log {
+    font-size: 3.5rem;
+}
+
+.header-nav li {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 1.6rem;
+}
+
+/* 擬似クラスを使って最初の要素の余白を消す */
+.header-nav li:first-child {
+    margin: 0;
+}
+
+.header-nav a:hover {
+    color: coral;
+}
+
+/* ハンバーガーメニュー */
+.han {
+    width: 40px;    
+    height: 30px;
+    display: flex;  
+    /* 縦に並べる */
+    flex-direction: column;
+    /* 子要素の配置方法 */
+    justify-content: space-between;
+    margin-top: 25px;
+    position: fixed;
+    top: -5px;
+    right: 20px; 
+    z-index: 3;
+}
+
+.han span { 
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: 0.4s;   
+}
+
+.han.active span:nth-of-type(1) {
+    transform: rotate(45deg) translate(10px, 10px);   
+}
+
+.han.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.han.active span:nth-of-type(3) {
+    transform: rotate(-45deg) translate(8px, -9px);
+}
+
+.han-nav {
+    font-size: 2rem;
+    opacity: 0;
+    /* クリックできない */
+    visibility: hidden; 
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    width: 200px;
+    height: 370px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    z-index: 2;
+}
+
+.han-nav li:not(:first-of-type) {
+    margin-top: 35px;
+}
+
+.han-nav.active{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.4s;
+    
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.mask.active {
+    opacity: 0.4;
+    visibility: visible;
+}
+
+/* -----------------
+first-viewのスタイル
+----------------- */
+.firstview-wrap{
+    width: 100%;
+    background-image: url(../img/computer-1209641_1280.jpg);
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 60px;     
+}
+
+.firstview-text{
+    color: white;
+    font-size: 4.5rem;
+}
+
+.firstview-text2 {
+    background-color: aqua;
+    font-size: 30px;
+    padding: 40px 0 30px 50px;
+}
+
+/* -------------------
+point-wrapのスタイル
+------------------- */
+.point-wrap {
+    text-align: center;
+}
+
+.point-heading {   
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px 0; 
+}
+
+.point-item {
+    display: flex;
+    border: 5px solid black;
+}
+
+.point-item img {
+    width: 60%;
+}
+
+.point-text {
+    width: 40%;
+    text-align: center;
+    background-color: rgb(88, 230, 88);
+ } 
+ 
+.point-title {
+    font-size: 3.4rem;
+    padding: 40px 0 40px 0;  
+}
+
+.point-explain {   
+    font-size: 2rem;
+    padding: 0 20px;
+    padding-top: 20px; 
+    line-height: 1.5; 
+}
+
+.rodomap-link {
+    background-color: aqua;
+    outline: 5px solid black;
+}
+
+/* ボタン */
+ .a_button_point {
+      display: inline-block;
+      border-style: solid;
+      background-color: lightgray;
+      border-width:1px;
+      border-color: darkgray;
+      color: black;
+      text-decoration: none;
+      font-size: 2.5rem;
+      line-height: 1.8;
+      margin: 30px 10px 10px;
+      display: table-cell;
+      vertical-align: middle;
+      display: flex;
+      justify-content: center;
+      align-items: center;      
+    }
+
+.a_button_point:hover {
+    background: #777777;   
+}
+
+/* --------------------
+lesson-wrapのスタイル
+-------------------- */
+
+/* 言語 */
+/* 動画を見る　ボタン */
+.a_button_lesson {
+    display: inline-block;
+    border-style: solid;
+    background-color: lightgray;
+    border-width:1px;
+    border-color: darkgray;
+    color: black;
+    text-decoration: none;
+    /* font-size: 3rem; */
+    margin: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a_button_lesson a {
+    font-size: 5rem;
+}
+
+.a_button_lesson:hover {
+    background: #777777;
+}
+
+.lesson-wrap {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;    
+}
+
+.lesson-heading {
+    font-size: 4rem;
+    margin-top: 50px;
+    padding-bottom: 40px;
+    display: inline-block;
+    border-bottom: 5px solid black;
+}
+
+.lesson-heading-2 {
+    font-size: 3rem;
+    margin-top: 40px;
+}
+
+.lesson-contents {
+    outline: 5px solid black;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;   
+}
+
+.lesson-item {
+    background-color: skyblue;
+    border: 3px solid black;
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 29%; 
+}
+
+.lesson-item img {
+    width: 100%;
+    height: 25%;
+}
+
+.lesson-explain {
+    font-size: 1.8rem;
+    height: 50%;
+    line-height: 1.4; 
+}
+
+.item-heading {
+    margin: 30px;
+    font-size: 2rem;
+    box-sizing: border-box;
+}
+
+.lesson-heading-2 {
+    margin-bottom: 40px;
+}
+
+
+.lesson-text {
+    height: 75%;
+    margin: 30px;
+}
+
+.a_button_lesson {
+    display: inline-block;
+    border-style: solid;
+    background-color: lightgray;
+    border-width: 1px;
+    border-color: darkgray;
+    color: black;
+    text-decoration: none;
+    font-size: 3rem;
+    display: table-cell;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 10px;
+    transform: translate(0, 20px);  
+}
+
+/* フレームワーク */
+/* 動画を見る　ボタン */
+.a_button_lesson-2 {
+    display: inline-block;
+    border-style: solid;
+    background-color: lightgray;
+    border-width: 1px;
+    border-color: darkgray;
+    color: black;
+    text-decoration: none;
+    font-size: 2.5rem;
+    margin: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.a_button_lesson-2:hover {
+    background: #777777;
+}
+
+.lesson-item-2{
+    display: flex;
+    display: block;
+    width: 28%;
+    margin: 0 auto;
+    background-color: yellow;
+    border: 3px solid black;
+    text-align: center;
+}
+
+.lesson-item-2  img {
+    width: 100%;
+    height: 40%;
+}
+
+.lesson-contents-2 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.item-heading-2 {
+    font-size: 3rem;
+    padding: 15px 0;
+}
+
+.lesson-heading-3 {
+    font-size: 2.5rem;
+    padding: 25px 0;
+}
+
+.lesson-explain-2 {
+    font-size: 2rem;
+    padding: 20px;
+}
+
+.lesson-text-2 {
+    height: 60%;
+}
+
+/* その他 */
+.lesson-wrap-3 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.lesson-contents-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.lesson-heading-4 {
+    font-size: 3rem;
+    padding: 30px 0;
+}
+
+.lesson-contents-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.lesson-item-3 {
+    height: 60%;
+    margin: 0 auto;
+    width: 30%;
+    background-color: aqua;
+    border: 3px solid black;
+}
+
+.lesson-item-3  img {
+    width: 100%;
+    height: 230px;
+}
+
+.item-heading-3 {
+    font-size: 2.2rem;
+    padding-top: 15px;
+}
+
+.lesson-explain-3 {
+    font-size: 1.8rem;
+    padding: 10px;
+}
+
+/* ----------------
+footerのスタイル
+---------------- */
+.footer-wrap {
+    display: flex;
+    text-align: center; 
+    height: 300px;
+    padding-top: 40px;
+    background: #f2f2f2;
+ }  
+
+.footer-title {
+    font-size: 4rem;
+    padding-bottom: 30px;
+}
+
+.footer-list {
+    font-size: 3rem;
+    line-height: 40px;
+}
+
+.footer-item {
+    width: 33%;
+    font-size: 4.8rem;
+}
+
+.footer-item-2 {
+    width: 33%;
+}
+
+.footer-item-3 {
+    width: 34%;
+}
+
+
+.footer-list a:hover {
+    text-decoration: underline;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
